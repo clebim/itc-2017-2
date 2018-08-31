@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+void preenche_matriz(float mat[][3])
+{
+	int i, j;
+	for(i = 0; i < 3; i++)
+		for(j = 0; j < 3; j++)
+		{
+			printf("matriz [%d][%d] = ", i+1, j+1);
+			scanf("%f", &mat[i][j]);
+		}
+}
+void multima(float A[][3], float B[][3], float resumulti[][3])
+{
+	int i, j, k;
+	for(i = 0; i < 3; i++)
+		for(j = 0; j < 3; j++)
+		{
+			resumulti[i][j] = 0;
+			for(k = 0; k < 3; k++)
+			{
+				resumulti[i][j] = resumulti[i][j] + A[i][k] * B[k][j];
+			}
+		}
+}
+void multies(float matr[][3], float resues[][3])
+{
+	int i, j;
+	for(i = 0; i < 3; i++)
+		for(j = 0; j < 3; j++)
+		{
+			matr[i][j] = matr[i][j] * 2;
+		}
+	
+}
+void somamat(float mat1[][3], float mat2[][3], float soma[][3]) 
+{
+	int i, j;
+	for(i = 0; i < 3; i++)
+		for(j = 0; j < 3; j++)
+		{
+			soma[i][j] = mat1[i][j] + mat2[i][j];
+		}
+}
+void submat(float mat1[][3], float mat2[][3], float sub[][3]) 
+{
+	int i, j;
+	for(i = 0; i < 3; i++)
+		for(j = 0; j < 3; j++)
+		{
+			sub[i][j] = mat1[i][j] - mat2 [i][j];
+		}
+}
+int main()
+{
+	float matrizA[3][3], matrizB[3][3], somaAB[3][3], multiAB[3][3], escalarB[3][3], matrizC[3][3];
+	int i, j;
+	printf("Digite os numeros da matriz 1 3x3:\n\n");
+	preenche_matriz(matrizA);
+	printf("Digite os numeros da matriz 2 3x3: \n\n");
+	preenche_matriz(matrizB);
+	multima(matrizA, matrizB, multiAB);
+	multies(matrizB, escalarB);
+	somamat(multiAB, escalarB, somaAB);
+	submat(somaAB, matrizA, matrizC);
+	printf("\n\nMatriz resultante:\n\n");
+	for(i = 0; i < 3; i++)
+	{
+		for(j = 0; j < 3; j++)
+		{
+			printf("%.2f ", matrizC[i][j]);
+		}
+		printf("\n");
+    }
+	getch();
+	return 0;
+}

@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <conio.h>
+
+int main()
+{
+	float ceo, pc, cc, pf, pcqf, vi, vtc, pci;
+	printf("Informe o codigo de estado de origem da carga de 1 a 5: ");
+	scanf("%f", &ceo);
+	printf("\nInforme o peso da carga em toneladas: ");
+	scanf("%f", &pc);
+	printf("\nInforme o codigo da carga de 10 a 40: ");
+	scanf("%f", &cc);
+	pf = pc*1000;
+	printf("\nPeso da carga em quilos: %.2f ", pf);
+	if(cc > 10 && cc <=20){
+		pcqf = pf*100;
+	}
+	else if(cc > 21 && cc <=30){
+		pcqf = pf*250;
+	}
+	else if(cc > 31 && cc <=40){
+		pcqf = pf*340;
+	}
+	
+	if(ceo == 1){
+		pci = pcqf * 1.35;
+	}
+	else if(ceo == 2){
+		pci = pcqf * 1.25;
+	}
+	else if(ceo == 3){
+		pci = pcqf * 1.15;
+	}
+	else if(ceo == 4){
+		pci = pcqf * 1.05;
+	}
+	else if(ceo == 5){
+		pci = pcqf;
+	}
+	printf("\nvalor da carga: %.0f reais", pcqf);
+	vi = pci -  pcqf;
+	printf("\nvalor do imposto sobre a carga: %.0f reais", vi);
+	printf("\nvalor final: %.0f reias", pci);
+	getch();
+	return 0;
+	
+	
+	
+	
+}

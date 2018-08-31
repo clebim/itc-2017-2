@@ -1,0 +1,83 @@
+
+
+
+
+1)
+
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+	int x = 1, y = 0;
+	setlocale(LC_ALL, "portuguese");
+	
+	while(y <= 0 || y%2==0)
+	{
+		system("cls");
+		printf("Digite um numero impar e positivo: ");
+		scanf("%d", &y);
+	}
+	printf("\nNumeros impares no intervalo: \n\n");
+	while(y >= x)
+	{
+		printf("%d ", y);
+		y = y - 2;
+	}
+	getch();
+	return 0;
+}
+
+2) 
+
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+	int x = 2, y = 0;
+	setlocale(LC_ALL, "portuguese");
+	
+	while(y%2!=0 || y <= 0)
+	{
+		system("cls");
+		printf("Digite um numero par e positivo: ");
+		scanf("%d", &y);
+	}
+	printf("\nNumeros pares no intervalo: \n\n");
+	while(y >= x)
+	{
+		printf("%d ", x);
+		x = x + 2;
+	}
+	getch();
+	return 0;
+}
+
+3)
+
+#include <stdio.h>
+#include <conio.h>
+#include <locale.h>
+
+int main()
+{
+	float prei, x=1;
+	setlocale(LC_ALL, "portuguese");
+	printf("digite o valor da fatura:");
+	scanf("%f", &prei);
+	while(x <= 36)
+	{
+		prei = prei + (0.075 * prei);
+		x = x + 1;
+	}
+	printf("A divida atual do cartão é: %.2f\n", prei;
+	getch();
+	return0;
+	 
+}
+
